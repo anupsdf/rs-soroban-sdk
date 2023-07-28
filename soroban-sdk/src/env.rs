@@ -126,7 +126,7 @@ use crate::auth::InvokerContractAuthEntry;
 use crate::unwrap::UnwrapInfallible;
 use crate::unwrap::UnwrapOptimized;
 use crate::{
-    crypto::Crypto, deploy::Deployer, events::Events, ledger::Ledger, logs::Logs, storage::Storage,
+    crypto::Crypto, deploy::Deployer, events::Events, ledger::Ledger, protnext::ProtocolNext, logs::Logs, storage::Storage,
     Address, Vec,
 };
 use internal::{
@@ -286,6 +286,12 @@ impl Env {
     #[inline(always)]
     pub fn ledger(&self) -> Ledger {
         Ledger::new(self)
+    }
+
+    /// Test new host fn
+    #[inline(always)]
+    pub fn protocol_next(&self) -> ProtocolNext {
+        ProtocolNext::new(self)
     }
 
     /// Get a deployer for deploying contracts.

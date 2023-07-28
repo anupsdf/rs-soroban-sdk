@@ -744,6 +744,7 @@ pub mod deploy;
 pub mod events;
 pub mod iter;
 pub mod ledger;
+pub mod protnext;
 pub mod logs;
 mod map;
 pub mod storage;
